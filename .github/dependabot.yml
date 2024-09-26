@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "devcontainer"
+  - package-ecosystem: "devcontainers"
     directory: "/"
     schedule:
       interval: "monthly"
