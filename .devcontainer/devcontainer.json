@@ -33,7 +33,8 @@
         "esbenp.prettier-vscode",
         "GitHub.copilot",
         "ms-azuretools.vscode-docker",
-        "GitHub.vscode-github-actions"
+        "GitHub.vscode-github-actions",
+        "bierner.markdown-preview-github-styles"
       ],
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
