@@ -26,35 +26,44 @@ jobs:
             conventional-commits:
               - type: 'fix'
                 nouns: ['FIX', 'Fix', 'fix', 'FIXED', 'Fixed', 'fixed']
-                labels: ['fix']
+                labels: ['bug']
               - type: 'feature'
                 nouns: ['FEATURE', 'Feature', 'feature', 'FEAT', 'Feat', 'feat']
-                labels: ['feature']
+                labels: ['enhancement']
               - type: 'breaking_change'
                 nouns: ['BREAKING CHANGE', 'BREAKING', 'MAJOR']
                 labels: ['BREAKING CHANGE']
               - type: 'refactor'
-                nouns: ['refactor', 'refact', 'refac', 'Refactor', 'Refact', 'Refac']
-                labels: ['refactor', 'fix']
+                nouns: ['refac', 'refact', 'refactor', 'REFAC', 'REFACT', 'REFACTOR', 'refacs', 'refacts', 'refactors', 'REFACS', 'REFACTS', 'REFACTORS']
+                labels: ['bug']
               - type: 'dependencies'
-                nouns: ['dependencies','dependencie','depends','depend','deps','dep','build(deps)','build(deps-dev)']
-                labels: ['build','dependencies','fix']
+                nouns: ['dependencies','dependencie','depends','depend','deps','dep', 'chore']
+                labels: ['dependencies','bug']
               - type: 'documentation'
-                nouns: ['doc','docu','document','documentation']
-                labels: ['documentation','fix']
+                nouns: ['doc','docs','docu','document','documentation']
+                labels: ['documentation','bug']
               - type: 'build'
                 nouns: ['build','rebuild']
-                labels: ['build','fix']
+                labels: ['build','bug']
               - type: 'config'
                 nouns: ['config', 'conf', 'cofiguration', 'configure']
-                labels: ['config','fix']
+                labels: ['config','bug']
+              - type: 'ci'
+                nouns: ['ci', 'CI']
+                labels: ['ci','bug']
+              - type: 'test'
+                nouns: ['test','tests','testing']
+                labels: ['test','bug']
+              - type: 'wip'
+                nouns: ['wip','WIP','Wip']
+                labels: ['wip','bug']
 
       - name: Verify labels
         id: action-verify-labels
         uses: mauroalderete/action-verify-labels@v1
         with:
-          none: question, wontfix, invalid
-          some: fix, feature, BREAKING CHANGE
+          none: question, wontfix, invalid, help wanted, good first issue, duplicate
+          some: BREAKING CHANGE, enhancement, bug, documentation, dependencies, build, config
           request-review: true
           request-review-header: "**:bookmark: verify-labels-action**"
           github-token: ${{ secrets.GITHUB_TOKEN }}
