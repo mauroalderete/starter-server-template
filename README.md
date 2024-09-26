@@ -1,6 +1,6 @@
-# coding-projects-template
+# starter-server-template
 
-<h4 align="center">Template to coding projects that requires a conventional workflow</h4>
+<h4 align="center">A minimal and flexible template to quickly deploy a simple server using Docker Compose</h4>
 
 &nbsp;
 
@@ -16,48 +16,46 @@
 	<img alt="Semantic Versioning: 2.0.0" src="https://img.shields.io/badge/Semantic--Versioning-2.0.0-a05f79?logo=semantic-release&logoColor=f97ff0">
 </a>
 
-[![Tests](https://github.com/mauroalderete/coding-projects-template/actions/workflows/tests.yml/badge.svg)](https://github.com/mauroalderete/coding-projects-template/actions/workflows/tests.yml)
-[![CodeQL](https://github.com/mauroalderete/coding-projects-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mauroalderete/coding-projects-template/actions/workflows/codeql-analysis.yml)
-
-<a href="./issues/new/choose">Report Bug</a>
+<a href="./issues/new?assignees=&labels=fix&projects=&template=bug_report.md&title=">Report Bug</a>
 ·
-<a href="./issues/new/choose">Request Feature</a>
+<a href="./issues/new?assignees=&labels=proposal&projects=&template=proposal-feature.md&title=As+a+%5Brole%5D%2C+I+want+to+%5Baction%5D%2C+so+that+%5Bbenefit%5D">Request Feature</a>
+·
+<a href="https://github.com/mauroalderete/starter-server-template/issues/new?assignees=&labels=question&projects=&template=question.md&title=">Question</a>
 
-<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20repo%20https://github.com/mauroalderete/coding-projects-template,%20created%20by%20@_mauroalderete%0A%0A%23DEVCommunity%20%23100DaysOfCode%20%23Golang%20%23gcode">
+<a href="https://x.com/intent/post?text=👋%20Check%20this%20amazing%20repo%20https://github.com/mauroalderete/starter-server-template,%20created%20by%20@_mauroalderete%0A%0A%23DEVCommunity%20%23100DaysOfCode%20%23DevOps%20%23Server">
 	<img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fatapas%2Fmodel-repo">
 </a>
 
 </div>
 
 &nbsp;
-# :wave: Introducing `coding-projects-templates
-This repository template contains the essential elements used in various projects to many stacks.
+# :wave: Introducing starter-server-template
+A minimal and flexible template to quickly deploy a simple server using Docker Compose. This template includes essential components to set up and manage a lightweight server for various machines, such as Raspberry Pi, personal computers, or other servers in your network
 
-- Includes workflows to handle labeling, versioning, testing
-- Contains a private license, a basic contributing redaction, and a covenant code of conduct.
-- Implements a definition to generate release notes.
-- Defines templates to the three issues types (bug, proposal, question) and a pull request template.
-- Additional prepare a dependabot script.
-- Schedule a CodeQL Analysis.
+**🎊 Use this template as a starting point for creating personalized server configurations across your network with ease 🎊**
 
-> Many of the configuration files in this repository are not working yet. Just consist of a sample definition of the configuration. You may adapt these files depending on your objectives. You should pay attention to subsequent indications to know how you do it.
+Features:
+
+- `Nginx` as a reverse proxy for handling incoming requests.
+- [gethomepage/homepage](https://github.com/gethomepage/homepage) for a customizable landing page.
+- Docker discovery service to easily find and manage Docker containers across machines.
+- Devcontainer setup for seamless development and containerized environment.
+
+> [!NOTE]
+> We appreciate the great effort they put into [gethomepage/homepage](https://github.com/gethomepage/homepage). Don't forget to visit their repository to learn how to configure your homepage and leave your ⭐ in the process.
 
 # :fire: How to use this template
 
-To use this template, click the button **Use this template** shown in the upper section on [root of repository](https://github.com/mauroalderete/coding-projects-template), then create a new repository.
+To use this template, click the button **Use this template** shown in the upper section on [root of repository](https://github.com/mauroalderete/starter-server-template), then create a new repository.
 
 Another way is initing the process of creating a new repository and selecting this template in the upper section.
 
 # :building_construction: How to Set up
 
-This template contains many files. A lot of them require special attention.
+This template contains many files that you would probably like to know how to configure...
 
-## CodeQL
-
-`/.github/workflows/codeql-analysis.yml`
-
-This file enables the CodeQL service provided by GitHub. You should provide a language supported.
-If your project is not supported, I recommend removing this yaml file.
+> [!WARNING]
+> This section is Work In Progress
 
 ## Code of conduct
 
@@ -71,16 +69,6 @@ This code is based on the covenant code. He is only required to specify an email
 
 This license is a private personal license redacted by chatGPT. This is only an example. I recommend changing this license to other than to be attached better to your needs.
 You can replace it with any Open License offered by GitHub, too.
-
-## Tests
-
-`/.github/workflows/tests.yml`
-
-This workflow is the most complex to configure. This depends highly on your stack and environment.
-In some cases, you will probably need to split this workflow into unit and integration tests.
-It only contains some steps with a simple message showing you the commands to configure a node test environment.
-
-I recommend you study your case carefully.
 
 ## Versioning
 
@@ -98,4 +86,4 @@ This file is empty. Replace the content with what you think is more convenient.
 
 ## Others
 
-The rest of the files usually don't require modifications. Implements defaults and typical workflows.
+This template uses [nginx](https://nginx.org/en/), [devcontainer](https://containers.dev/), and [gethomepage/homepage](https://github.com/gethomepage/homepage) to easily setup a minimal server... feel free to check out how to configure each component by visiting their documentation sections.
