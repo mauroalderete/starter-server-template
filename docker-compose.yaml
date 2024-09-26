@@ -6,7 +6,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx:/etc/nginx:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
     restart: unless-stopped
     networks:
       - server
@@ -36,14 +37,14 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./homepage/config/bookmarks.yaml:/app/config/bookmarks.yaml:ro
-      - ./homepage/config/custom.css:/app/config/custom.css:ro
-      - ./homepage/config/custom.js:/app/config/custom.js:ro
-      - ./homepage/config/docker.yaml:/app/config/docker.yaml:ro
-      - ./homepage/config/kubernetes.yaml:/app/config/kubernetes.yaml:ro
-      - ./homepage/config/services.yaml:/app/config/services.yaml:ro
-      - ./homepage/config/settings.yaml:/app/config/settings.yaml:ro
-      - ./homepage/config/widgets.yaml:/app/config/widgets.yaml:ro
+      - ./homepage/config/bookmarks.yaml:/app/config/bookmarks.yaml
+      - ./homepage/config/custom.css:/app/config/custom.css
+      - ./homepage/config/custom.js:/app/config/custom.js
+      - ./homepage/config/docker.yaml:/app/config/docker.yaml
+      - ./homepage/config/kubernetes.yaml:/app/config/kubernetes.yaml
+      - ./homepage/config/services.yaml:/app/config/services.yaml
+      - ./homepage/config/settings.yaml:/app/config/settings.yaml
+      - ./homepage/config/widgets.yaml:/app/config/widgets.yaml
       - ./homepage/images:/app/public/images
     restart: unless-stopped
     networks:
