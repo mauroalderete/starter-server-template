@@ -4,7 +4,7 @@ about: Suggest an idea for this project
 title: 'As a [role], I want to [action], so that [benefit]'
 labels: proposal
 assignees: ''
-
+projects: mauroalderete/20
 ---
 
 ### Who it is for?
