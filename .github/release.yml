@@ -1,14 +1,20 @@
 changelog:
   categories:
-    - title: 'Breaking Changes :fire:'
+    - title: '🥳 Breaking Changes'
       labels:
         - BREAKING CHANGE
-    - title: 'New Features :confetti_ball:'
+    - title: '🔥 New Features and Enhancements'
       labels:
-        - feature
-    - title: 'Fixes :bug:'
+        - enhancement
+    - title: '🐛 Fixes'
       labels:
-        - fix
-    - title: Other Changes
+        - bug
+    - title: '📖 Changes to Documentation'
+      labels:
+        - "documentation"
+    - title: '🛠️ Changes in Dependencies'
+      labels:
+        - "dependencies"
+    - title: '📎 Other Changes'
       labels:
         - "*"
