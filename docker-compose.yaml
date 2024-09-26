@@ -1,0 +1,56 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: reverse_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    restart: unless-stopped
+    networks:
+      - server
+
+  dockerproxy:
+    image: ghcr.io/tecnativa/docker-socket-proxy:latest
+    container_name: dockerproxy
+    environment:
+      - CONTAINERS=1 # Allow access to viewing containers
+      - SERVICES=1 # Allow access to viewing services (necessary when using Docker Swarm)
+      - TASKS=1 # Allow access to viewing tasks (necessary when using Docker Swarm)
+      - POST=0 # Disallow any POST operations (effectively read-only)
+    ports:
+      - 127.0.0.1:2375:2375
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+    networks:
+      - server
+
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    environment:
+      PUID: 1002
+      PGID: 1002
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./homepage/config/bookmarks.yaml:/app/config/bookmarks.yaml
+      - ./homepage/config/custom.css:/app/config/custom.css
+      - ./homepage/config/custom.js:/app/config/custom.js
+      - ./homepage/config/docker.yaml:/app/config/docker.yaml
+      - ./homepage/config/kubernetes.yaml:/app/config/kubernetes.yaml
+      - ./homepage/config/services.yaml:/app/config/services.yaml
+      - ./homepage/config/settings.yaml:/app/config/settings.yaml
+      - ./homepage/config/widgets.yaml:/app/config/widgets.yaml
+      - ./homepage/images:/app/public/images
+    restart: unless-stopped
+    networks:
+      - server
+
+networks:
+  server:
+    # Define network for services
+    external: true
